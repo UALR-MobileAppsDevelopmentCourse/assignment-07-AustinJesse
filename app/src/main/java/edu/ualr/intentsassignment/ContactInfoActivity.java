@@ -27,10 +27,10 @@ public class ContactInfoActivity extends AppCompatActivity {
         setContentView(mBinding.getRoot());
         Contact c = getIntent().getParcelableExtra(ContactFormActivity.ENTRY_KEY);
         mBinding.contactName.setText(c.getFullName());
-        mBinding.phoneNumberView.setText(c.getPhoneNumber());
-        mBinding.emailView.setText(c.getEmailAddress());
-        mBinding.locationView.setText(c.getAddress());
-        mBinding.websiteView.setText(c.getWebsite());
+        mBinding.textPhone.setText(c.getPhoneNumber());
+        mBinding.textEmailAddress.setText(c.getEmailAddress());
+        mBinding.textAddress.setText(c.getAddress());
+        mBinding.textWebsite.setText(c.getWebsite());
 
     }
 
@@ -49,7 +49,7 @@ public class ContactInfoActivity extends AppCompatActivity {
         Contact c = getIntent().getParcelableExtra(ContactFormActivity.ENTRY_KEY);
         String smsUri = "smsto:" + c.getPhoneNumber();
         Intent intent = new Intent(Intent.ACTION_SENDTO, Uri.parse(smsUri));
-        intent.putExtra("message", "Hello!")
+        intent.putExtra("message", "Hello!");
         startActivity(intent);
     }
     // TODO 10. Create a new method that invokes a Maps app, using as parameter the address included in the contact info received from ContactFormActivity in the 7th step

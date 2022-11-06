@@ -2,6 +2,7 @@ package edu.ualr.intentsassignment;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Parcelable;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
@@ -28,6 +29,13 @@ public class ContactFormActivity extends AppCompatActivity {
     public EditText address;
     public EditText website;
 
+    String personFName;
+    String personLName;
+    String personPhone;
+    String personEmail;
+    String personAddress;
+    String personWebsite;
+
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -47,11 +55,19 @@ public class ContactFormActivity extends AppCompatActivity {
                 onButtonClick(view);
             }
         });
+
     }
     public void onButtonClick(View view){
         Intent intent = new Intent(this, ContactInfoActivity.class);
-        Contact c = new Contact(firstName.getText().toString(), lastName.getText().toString(), phoneNumber.getText().toString(), emailAddress.getText().toString(), address.getText().toString(), website.getText().toString());
-        intent.putExtra(ENTRY_KEY, c);
+        personFName = firstName.getText().toString();
+        personLName = lastName.getText().toString();
+        personPhone = phoneNumber.getText().toString();
+        personEmail = emailAddress.getText().toString();
+        personAddress = address.getText().toString();
+        personWebsite = website.getText().toString();
+
+        Contact c = new Contact(personFName, personLName, personPhone, personEmail, personAddress, personWebsite);
+        intent.putExtra(ENTRY_KEY, (Parcelable) c);
         startActivity(intent);
     }
 }

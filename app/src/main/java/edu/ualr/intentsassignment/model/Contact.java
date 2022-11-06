@@ -10,7 +10,7 @@ public class Contact {
     private String address;
     private String website;
 
-    public Contact() {
+    public Contact(String personFName, String personLName, String personPhone, String personEmail, String personAddress, String personWebsite) {
     }
 
     public String getFirstName() {

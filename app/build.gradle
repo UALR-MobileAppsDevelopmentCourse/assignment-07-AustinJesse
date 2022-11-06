@@ -8,6 +8,10 @@ android {
     }
     buildFeatures {
         dataBinding true
+        viewBinding true
+    }
+    packagingOptions {
+        resources.excludes.add("META-INF/*")
     }
     defaultConfig {
         applicationId "edu.ualr.intentsassignment"

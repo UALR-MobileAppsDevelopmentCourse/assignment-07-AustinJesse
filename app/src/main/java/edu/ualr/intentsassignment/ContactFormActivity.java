@@ -12,13 +12,13 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.google.android.material.button.MaterialButton;
 
 import edu.ualr.intentsassignment.model.Contact;
-import edu.ualr.intentsassignment.databinding.ContactFormBinding;
+import edu.ualr.intentsassignment.databinding.ContactFormActivityBinding;
 
 public class ContactFormActivity extends AppCompatActivity {
     // TODO 01. Create a new layout file to define the GUI elements of the ContactFormActivity.
     // TODO 02. Define the basic skeleton of the ContactFormActivity. Inflate the layout defined in the first step to display the GUI elements on screen.
     // TODO 06. Create a new method that reads the values in the several EditText elements of the layout and then uses the Contact class to send those data to ContactInfoActivity
-    public static final String EXTRA_CONTACT = "ContactData";
+    public static final String ENTRY_KEY = "ContactData";
     private ContactFormBinding mBinding;
     private MaterialButton saveBtn;
     public EditText firstName;
@@ -51,7 +51,7 @@ public class ContactFormActivity extends AppCompatActivity {
     public void onButtonClick(View view){
         Intent intent = new Intent(this, ContactInfoActivity.class);
         Contact c = new Contact(firstName.getText().toString(), lastName.getText().toString(), phoneNumber.getText().toString(), emailAddress.getText().toString(), address.getText().toString(), website.getText().toString());
-        intent.putExtra(EXTRA_CONTACT, c);
+        intent.putExtra(ENTRY_KEY, c);
         startActivity(intent);
     }
 }

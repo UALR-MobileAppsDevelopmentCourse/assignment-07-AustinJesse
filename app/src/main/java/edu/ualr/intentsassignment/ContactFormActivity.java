@@ -12,7 +12,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.google.android.material.button.MaterialButton;
 
 import edu.ualr.intentsassignment.model.Contact;
-import edu.ualr.intentsassignment.databinding.ContactFormActivityBinding;
+import edu.ualr.intentsassignment.databinding.ContactFormBinding;
 
 public class ContactFormActivity extends AppCompatActivity {
     // TODO 01. Create a new layout file to define the GUI elements of the ContactFormActivity.

@@ -1,0 +1,226 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    >
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        >
+
+        <ImageView
+            style="@style/AppTheme.ImageView"
+            android:id="@+id/person_Image"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_perm_identity_black_24"
+            android:padding="10dp"
+            app:layout_constraintBottom_toBottomOf="@id/person_Image"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@id/person_Image" />
+
+        <EditText
+            android:id="@+id/person_first_name"
+            style="@style/AppTheme.ContactForm.EditText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:inputType="textPersonName"
+            android:ems="10"
+            app:layout_constraintBottom_toTopOf="@+id/divider7"
+            app:layout_constraintStart_toEndOf="@id/person_Image"
+            app:layout_constraintTop_toTopOf="parent"
+            android:hint="@string/first_name_hint"/>
+
+        <View
+            android:id="@+id/divider7"
+            style="@style/AppTheme.ContactInfo.HorizontalDivider"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="?android:attr/listDivider"
+            app:layout_constraintBottom_toTopOf="@+id/person_last_name"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/person_first_name" />
+
+
+        <EditText
+            android:id="@+id/person_last_name"
+            style="@style/AppTheme.ContactForm.EditText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:hint="@string/last_name_hint"
+            android:inputType="textPersonName"
+            app:layout_constraintBottom_toTopOf="@+id/divider8"
+            app:layout_constraintStart_toStartOf="@id/person_first_name"
+            app:layout_constraintTop_toBottomOf="@+id/divider7"  />
+
+        <View
+            android:id="@+id/divider8"
+            style="@style/AppTheme.ContactInfo.HorizontalDivider"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="?android:attr/listDivider"
+            app:layout_constraintBottom_toTopOf="@+id/phone_number"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/person_last_name" />
+
+        <EditText
+            android:id="@+id/phone_number"
+            style="@style/AppTheme.ContactForm.EditText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:inputType="phone"
+            app:layout_constraintStart_toEndOf="@id/phone_Image"
+            app:layout_constraintBottom_toTopOf="@+id/divider9"
+            app:layout_constraintStart_toStartOf="@id/person_last_name"
+            app:layout_constraintTop_toBottomOf="@+id/divider8" />
+
+        <View
+            android:id="@+id/divider9"
+            style="@style/AppTheme.ContactInfo.HorizontalDivider"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="?android:attr/listDivider"
+            app:layout_constraintBottom_toTopOf="@+id/email"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/phone_number" />
+
+        <ImageView
+            android:id="@+id/phone_Image"
+            style="@style/AppTheme.ImageView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_phone_black_24dp"
+            app:layout_constraintBottom_toBottomOf="@id/phone_number"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@id/phone_number" />
+
+        <EditText
+            android:id="@+id/email"
+            style="@style/AppTheme.ContactForm.EditText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:inputType="textEmailAddress"
+            app:layout_constraintBottom_toTopOf="@+id/divider10"
+            app:layout_constraintStart_toStartOf="@id/phone_number"
+            app:layout_constraintTop_toBottomOf="@+id/divider9"
+            android:hint="@string/email_hint"/>
+
+        <View
+            android:id="@+id/divider10"
+            style="@style/AppTheme.ContactInfo.HorizontalDivider"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="?android:attr/listDivider"
+            app:layout_constraintBottom_toTopOf="@+id/location"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/email" />
+
+        <ImageView
+            android:id="@+id/email_Image"
+            style="@style/AppTheme.ImageView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:src="@drawable/ic_email_black_24dp"
+            app:layout_constraintBottom_toBottomOf="@id/email"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@id/email" />
+
+        <EditText
+            android:id="@+id/location"
+            style="@style/AppTheme.ContactForm.EditText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:inputType="textPostalAddress"
+            app:layout_constraintBottom_toTopOf="@+id/divider11"
+            app:layout_constraintStart_toStartOf="@id/email"
+            app:layout_constraintTop_toBottomOf="@+id/divider10"
+            android:hint="@string/address_hint"/>
+
+        <View
+            android:id="@+id/divider11"
+            style="@style/AppTheme.ContactInfo.HorizontalDivider"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="?android:attr/listDivider"
+            app:layout_constraintBottom_toTopOf="@+id/website"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/location" />
+
+        <ImageView
+            android:id="@+id/location_Image"
+            style="@style/AppTheme.ImageView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_place_black_24dp"
+            app:layout_constraintBottom_toBottomOf="@id/location"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="@id/location" />
+
+        <EditText
+            android:id="@+id/website"
+            style="@style/AppTheme.ContactForm.EditText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:inputType="textWebEditText"
+            app:layout_constraintBottom_toTopOf="@+id/divider12"
+            app:layout_constraintStart_toStartOf="@id/location"
+            app:layout_constraintTop_toBottomOf="@+id/divider11"
+            android:hint="@string/website_hint"/>
+
+        <View
+            android:id="@+id/divider12"
+            style="@style/AppTheme.ContactInfo.HorizontalDivider"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="?android:attr/listDivider"
+            app:layout_constraintBottom_toTopOf="@+id/saveButton"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/website" />
+
+        <ImageView
+            android:id="@+id/website_Image"
+            style="@style/AppTheme.ImageView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_public_black_24dp"
+            app:layout_constraintBottom_toBottomOf="@id/website"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="@id/website" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/saveButton"
+            style="@style/AppTheme.ContactForm.Button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="@string/save_button_label"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/divider12" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

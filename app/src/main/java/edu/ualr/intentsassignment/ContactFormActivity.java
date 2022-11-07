@@ -2,8 +2,11 @@ package edu.ualr.intentsassignment;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.net.Uri;
+import android.view.LayoutInflater;
 import android.os.Parcelable;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.EditText;
 import android.widget.TextView;
 
@@ -14,6 +17,9 @@ import com.google.android.material.button.MaterialButton;
 
 import edu.ualr.intentsassignment.model.Contact;
 import edu.ualr.intentsassignment.databinding.ContactFormBinding;
+import edu.ualr.intentsassignment.databinding.ContactInfoBinding;
+
+import android.util.Log;
 
 public class ContactFormActivity extends AppCompatActivity {
     // TODO 01. Create a new layout file to define the GUI elements of the ContactFormActivity.

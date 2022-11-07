@@ -32,6 +32,7 @@ public class ContactInfoActivity extends AppCompatActivity {
         mBinding.textAddress.setText(c.getAddress());
         mBinding.textWebsite.setText(c.getWebsite());
 
+
     }
 
     // TODO 08. Create a new method that invokes a Phone Dialer app, using as parameter the phone number included in the contact info received from ContactFormActivity in the previous step

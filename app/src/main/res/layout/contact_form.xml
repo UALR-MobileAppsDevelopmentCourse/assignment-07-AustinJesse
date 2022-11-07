@@ -78,6 +78,7 @@
             android:layout_height="wrap_content"
             android:ems="10"
             android:inputType="phone"
+            android:hint="Phone"
             app:layout_constraintStart_toEndOf="@id/phone_Image"
             app:layout_constraintBottom_toTopOf="@+id/divider9"
             app:layout_constraintStart_toStartOf="@id/person_last_name"

@@ -17,6 +17,11 @@ import edu.ualr.intentsassignment.model.Contact;
 public class ContactInfoActivity extends AppCompatActivity {
     // TODO 03. Create a new layout file to define the GUI elements of the ContactInfoActivity.
     // TODO 04. Define the basic skeleton of the ContactInfoActivity. Inflate the layout defined in the first step to display the GUI elements on screen.
+    private Chip callButton;
+    private Chip textButton;
+    private Chip emailButton;
+    private Chip mapButton;
+    private Chip websiteButton;
     private ContactInfoBinding mBinding;
 
     // TODO 07. Create a new method that reads the contact info coming from ContactFormActivity and use it to populate the several TextView elements in the layout.
@@ -26,13 +31,52 @@ public class ContactInfoActivity extends AppCompatActivity {
         mBinding = ContactInfoBinding.inflate(getLayoutInflater());
         setContentView(mBinding.getRoot());
         Contact c = getIntent().getParcelableExtra(ContactFormActivity.ENTRY_KEY);
-        mBinding.contactName.setText(c.getFullName());
-        mBinding.textPhone.setText(c.getPhoneNumber());
-        mBinding.textEmailAddress.setText(c.getEmailAddress());
-        mBinding.textAddress.setText(c.getAddress());
-        mBinding.textWebsite.setText(c.getWebsite());
+        callButton = findViewById(R.id.call_chip);
+        textButton = findViewById(R.id.text_chip);
+        emailButton = findViewById(R.id.email_chip);
+        mapButton = findViewById(R.id.location_chip);
+        websiteButton = findViewById(R.id.web_chip);
+        TextView name = findViewById(R.id.text_chip);
+        final TextView phoneNum = findViewById(R.id.textPhone);
+        final TextView emailAdd = findViewById(R.id.textEmailAddress);
+        final TextView address = findViewById(R.id.textAddress);
+        final TextView website = findViewById(R.id.textWebsite);
+        name.setText(c.getFullName());
+        phoneNum.setText(c.getPhoneNumber());
+        emailAdd.setText(c.getEmailAddress());
+        address.setText(c.getAddress());
+        website.setText(c.getWebsite());
 
-
+        this.callButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                onCallClick(phoneNum);
+            }
+        });
+        this.textButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                onTextClick(phoneNum);
+            }
+        });
+        this.emailButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                onEmailClick(emailAdd);
+            }
+        });
+        this.mapButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                onMapClick(address);
+            }
+        });
+        this.websiteButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                onWebsiteClick(website);
+            }
+        });
     }
 
     // TODO 08. Create a new method that invokes a Phone Dialer app, using as parameter the phone number included in the contact info received from ContactFormActivity in the previous step
